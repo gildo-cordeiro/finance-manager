@@ -1,0 +1,115 @@
+<mxfile host="65bd71144e">
+    <diagram id="ZLoTVelU2R_6aFe9_mM4" name="Page-1">
+        <mxGraphModel dx="427" dy="291" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Users" style="shape=swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="20" width="160" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&amp;nbsp;username" style="text;html=1;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="70" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&amp;nbsp;email" style="text;html=1;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&amp;nbsp;password" style="text;html=1;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="130" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&amp;nbsp;created_at" style="text;html=1;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="160" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&amp;nbsp;id (PK)" style="text;html=1;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="40" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Categories" style="shape=swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="20" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&amp;nbsp;user_id (FK)" style="text;html=1;whiteSpace=wrap;" parent="8" vertex="1">
+                    <mxGeometry y="70" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&amp;nbsp;name" style="text;html=1;whiteSpace=wrap;" parent="8" vertex="1">
+                    <mxGeometry y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&amp;nbsp;created_at" style="text;html=1;whiteSpace=wrap;" parent="8" vertex="1">
+                    <mxGeometry y="130" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&amp;nbsp;id (PK)" style="text;html=1;whiteSpace=wrap;" parent="8" vertex="1">
+                    <mxGeometry y="40" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Transactions" style="shape=swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="380" width="160" height="250" as="geometry">
+                        <mxRectangle x="520" y="260" width="110" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="&amp;nbsp;user_id (FK)" style="text;html=1;whiteSpace=wrap;" parent="13" vertex="1">
+                    <mxGeometry y="70" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&amp;nbsp;category_id (FK)" style="text;html=1;whiteSpace=wrap;" parent="13" vertex="1">
+                    <mxGeometry y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&amp;nbsp;amount" style="text;html=1;whiteSpace=wrap;" parent="13" vertex="1">
+                    <mxGeometry y="130" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="&amp;nbsp;description" style="text;html=1;whiteSpace=wrap;" parent="13" vertex="1">
+                    <mxGeometry y="160" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&amp;nbsp;transaction_date" style="text;html=1;whiteSpace=wrap;" parent="13" vertex="1">
+                    <mxGeometry y="190" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&amp;nbsp;created_at" style="text;html=1;whiteSpace=wrap;" parent="13" vertex="1">
+                    <mxGeometry y="220" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&amp;nbsp;id (PK)" style="text;html=1;whiteSpace=wrap;" parent="13" vertex="1">
+                    <mxGeometry y="40" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Dashboards" style="shape=swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="380" width="160" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&amp;nbsp;user_id (FK)" style="text;html=1;whiteSpace=wrap;" parent="21" vertex="1">
+                    <mxGeometry y="70" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&amp;nbsp;name" style="text;html=1;whiteSpace=wrap;" parent="21" vertex="1">
+                    <mxGeometry y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="&amp;nbsp;config" style="text;html=1;whiteSpace=wrap;" parent="21" vertex="1">
+                    <mxGeometry y="130" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="&amp;nbsp;created_at" style="text;html=1;whiteSpace=wrap;" parent="21" vertex="1">
+                    <mxGeometry y="160" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&amp;nbsp;id (PK)" style="text;html=1;whiteSpace=wrap;" parent="21" vertex="1">
+                    <mxGeometry y="40" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.004;entryY=0.18;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="11" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="180" y="85" as="sourcePoint"/>
+                        <mxPoint x="620" y="110" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="180" y="180"/>
+                            <mxPoint x="180" y="85"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="620" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="12" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="730" y="185" as="sourcePoint"/>
+                        <mxPoint x="620" y="382" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="730" y="295"/>
+                            <mxPoint x="620" y="295"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
