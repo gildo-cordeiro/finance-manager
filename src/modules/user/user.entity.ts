@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  OneToMany,
+} from 'typeorm';
 import { Category } from '../category/category.entity';
 import { Transaction } from '../transaction/transaction.entity';
 import { Dashboard } from '../dashboard/dashboard.entity';
@@ -15,12 +21,12 @@ export class User extends BaseEntity {
   @Column()
   password: string;
 
-  @OneToMany(() => Category, category => category.user)
+  @OneToMany(() => Category, (category) => category.user)
   categories: Category[];
 
-  @OneToMany(() => Transaction, transaction => transaction.user)
+  @OneToMany(() => Transaction, (transaction) => transaction.user)
   transactions: Transaction[];
 
-  @OneToMany(() => Dashboard, dashboard => dashboard.user)
+  @OneToMany(() => Dashboard, (dashboard) => dashboard.user)
   dashboards: Dashboard[];
 }

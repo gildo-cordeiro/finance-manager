@@ -8,7 +8,7 @@ export class UserService {
   constructor(
     @InjectRepository(User)
     private userRepository: Repository<User>,
-  ) { }
+  ) {}
 
   async findByUsername(username: string): Promise<User> {
     return this.userRepository.findOne({ where: { username } });

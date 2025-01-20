@@ -1,14 +1,20 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  ManyToOne,
+} from 'typeorm';
 import { User } from '../user/user.entity';
 import { Category } from '../category/category.entity';
 import { BaseEntity } from 'src/shared/database/base.entity';
 
 @Entity()
 export class Transaction extends BaseEntity {
-  @ManyToOne(() => User, user => user.transactions)
+  @ManyToOne(() => User, (user) => user.transactions)
   user: User;
 
-  @ManyToOne(() => Category, category => category.transactions)
+  @ManyToOne(() => Category, (category) => category.transactions)
   category: Category;
 
   @Column('decimal', { precision: 10, scale: 2 })
