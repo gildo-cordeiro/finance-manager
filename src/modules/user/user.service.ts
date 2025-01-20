@@ -8,7 +8,13 @@ export class UserService {
   constructor(
     @InjectRepository(User)
     private userRepository: Repository<User>,
-  ) {}
+  ) { }
 
-  // Métodos de serviço para usuários
+  async findByUsername(username: string): Promise<User> {
+    return this.userRepository.findOne({ where: { username } });
+  }
+
+  async create(user: User): Promise<User> {
+    return this.userRepository.save(user);
+  }
 }
