@@ -1,10 +1,10 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne } from 'typeorm';
-import { User } from '../../user/entities/user.entity';
+import { User } from '../../modules/user/user.entity';
 
 @Entity()
 export class Dashboard {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @ManyToOne(() => User, user => user.dashboards)
   user: User;

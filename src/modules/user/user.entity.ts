@@ -1,12 +1,12 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from 'typeorm';
-import { Category } from '../../category/entities/category.entity';
-import { Transaction } from '../../transaction/entities/transaction.entity';
-import { Dashboard } from '../../dashboard/entities/dashboard.entity';
+import { Category } from '../category/category.entity';
+import { Transaction } from '../transaction/transaction.entity';
+import { Dashboard } from '../dashboard/dashboard.entity';
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column({ unique: true })
   username: string;

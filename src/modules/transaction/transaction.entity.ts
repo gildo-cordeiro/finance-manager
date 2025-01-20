@@ -1,11 +1,11 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne } from 'typeorm';
-import { User } from '../../user/entities/user.entity';
-import { Category } from '../../category/entities/category.entity';
+import { User } from '../user/user.entity';
+import { Category } from '../category/category.entity';
 
 @Entity()
 export class Transaction {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @ManyToOne(() => User, user => user.transactions)
   user: User;
