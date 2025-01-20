@@ -1,10 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne } from 'typeorm';
 import { User } from '../../modules/user/user.entity';
+import { BaseEntity } from 'src/shared/database/base.entity';
 
 @Entity()
-export class Dashboard {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+export class Dashboard extends BaseEntity{
 
   @ManyToOne(() => User, user => user.dashboards)
   user: User;
@@ -14,7 +13,4 @@ export class Dashboard {
 
   @Column('jsonb')
   config: object;
-
-  @CreateDateColumn()
-  createdAt: Date;
 }

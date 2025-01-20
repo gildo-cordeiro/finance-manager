@@ -1,12 +1,10 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne } from 'typeorm';
 import { User } from '../user/user.entity';
 import { Category } from '../category/category.entity';
+import { BaseEntity } from 'src/shared/database/base.entity';
 
 @Entity()
-export class Transaction {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
+export class Transaction extends BaseEntity {
   @ManyToOne(() => User, user => user.transactions)
   user: User;
 
@@ -21,7 +19,4 @@ export class Transaction {
 
   @Column()
   transactionDate: Date;
-
-  @CreateDateColumn()
-  createdAt: Date;
 }

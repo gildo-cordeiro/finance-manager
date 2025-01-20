@@ -2,12 +2,10 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } f
 import { Category } from '../category/category.entity';
 import { Transaction } from '../transaction/transaction.entity';
 import { Dashboard } from '../dashboard/dashboard.entity';
+import { BaseEntity } from 'src/shared/database/base.entity';
 
 @Entity()
-export class User {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
+export class User extends BaseEntity {
   @Column({ unique: true })
   username: string;
 
@@ -16,9 +14,6 @@ export class User {
 
   @Column()
   password: string;
-
-  @CreateDateColumn()
-  createdAt: Date;
 
   @OneToMany(() => Category, category => category.user)
   categories: Category[];
