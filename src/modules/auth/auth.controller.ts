@@ -1,6 +1,6 @@
 import { Controller, Post, Body, Request, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { JwtAuthGuard } from './jwt-auth.guard';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -9,18 +9,31 @@ export class AuthController {
   @Post('login')
   async login(@Body() body) {
     const user = await this.authService.validateUser(
-      body.username,
+      body.email,
       body.password,
     );
-    if (!user) {
-      return { message: 'Invalid credentials' };
-    }
     return this.authService.login(user);
   }
 
-  @Post('register')
-  async register(@Body() body) {
-    return this.authService.register(body);
+  @Post('sign-up')
+  async signUp(@Body() signUpDto: { name: string; email: string; password: string }) {
+    return this.authService.register(signUpDto);
+  }
+
+  @Post('forgot-password')
+  async forgotPassword(@Body('email') email: string) {
+    return this.authService.forgotPassword(email);
+  }
+
+  @Post('reset-password')
+  async resetPassword(@Body() resetPasswordDto: { token: string; password: string }) {
+    return this.authService.resetPassword(resetPasswordDto);
+
+  }
+
+  @Post('renew-token')
+  async renewToken(@Body('refreshToken') refreshToken: string) {
+    return this.authService.renewToken(refreshToken);
   }
 
   @UseGuards(JwtAuthGuard)

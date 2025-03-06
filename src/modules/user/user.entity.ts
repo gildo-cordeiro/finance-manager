@@ -8,12 +8,12 @@ import {
 import { Category } from '../category/category.entity';
 import { Transaction } from '../transaction/transaction.entity';
 import { Dashboard } from '../dashboard/dashboard.entity';
-import { BaseEntity } from 'src/shared/database/base.entity';
+import { BaseEntity } from '../../shared/database/base.entity';
 
 @Entity()
 export class User extends BaseEntity {
   @Column({ unique: true })
-  username: string;
+  name: string;
 
   @Column({ unique: true })
   email: string;
@@ -29,4 +29,11 @@ export class User extends BaseEntity {
 
   @OneToMany(() => Dashboard, (dashboard) => dashboard.user)
   dashboards: Dashboard[];
+
+  initialize(partial: Partial<User>) {
+    Object.assign(this, partial);
+    this.categories = this.categories || [];
+    this.transactions = this.transactions || [];
+    this.dashboards = this.dashboards || [];
+  }
 }

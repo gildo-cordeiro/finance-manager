@@ -1,10 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { User } from 'src/modules/user/user.entity';
-import { Category } from 'src/modules/category/category.entity';
-import { Transaction } from 'src/modules/transaction/transaction.entity';
-import { Dashboard } from 'src/modules/dashboard/dashboard.entity';
 
 @Module({
   imports: [
@@ -22,7 +18,6 @@ import { Dashboard } from 'src/modules/dashboard/dashboard.entity';
       }),
       inject: [ConfigService],
     }),
-    TypeOrmModule.forFeature([User, Category, Transaction, Dashboard]),
   ],
   exports: [TypeOrmModule],
 })

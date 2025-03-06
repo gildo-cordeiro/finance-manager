@@ -6,7 +6,7 @@ import {
   ManyToOne,
 } from 'typeorm';
 import { User } from '../../modules/user/user.entity';
-import { BaseEntity } from 'src/shared/database/base.entity';
+import { BaseEntity } from '../../shared/database/base.entity';
 
 @Entity()
 export class Dashboard extends BaseEntity {

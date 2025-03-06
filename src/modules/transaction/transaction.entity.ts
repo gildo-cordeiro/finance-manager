@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { User } from '../user/user.entity';
 import { Category } from '../category/category.entity';
-import { BaseEntity } from 'src/shared/database/base.entity';
+import { BaseEntity } from '../../shared/database/base.entity';
 
 @Entity()
 export class Transaction extends BaseEntity {

@@ -1,7 +1,7 @@
 import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
 import { User } from '../user/user.entity';
 import { Transaction } from '../transaction/transaction.entity';
-import { BaseEntity } from 'src/shared/database/base.entity';
+import { BaseEntity } from '../../shared/database/base.entity';
 
 @Entity()
 export class Category extends BaseEntity {
